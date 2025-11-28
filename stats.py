@@ -10,3 +10,18 @@ def char_count(words):
         counts[ch] = counts.get(ch, 0) + 1
 
     return counts
+
+def sorted_words(dict):
+    results = []
+
+    for k, v in dict.items():
+        if not k.isalpha():
+            continue
+        results.append({"char": k, "num": v})
+
+    results.sort(reverse=True, key=sort_on)
+    
+    return results
+
+def sort_on(items):
+    return items["num"]
